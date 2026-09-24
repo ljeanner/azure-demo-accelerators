@@ -1,0 +1,115 @@
+{
+  "name": "${KS_NAME}-index",
+  "description": "Search index for blob knowledge source '${KS_NAME}'",
+  "fields": [
+    {
+      "name": "chunk_id",
+      "type": "Edm.String",
+      "key": true,
+      "searchable": true,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": true,
+      "facetable": true,
+      "analyzer": "keyword"
+    },
+    {
+      "name": "parent_id",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": true,
+      "facetable": true
+    },
+    {
+      "name": "title",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": true,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "chunk",
+      "type": "Edm.String",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false
+    },
+    {
+      "name": "vector",
+      "type": "Collection(Edm.Single)",
+      "searchable": true,
+      "filterable": false,
+      "retrievable": true,
+      "stored": true,
+      "sortable": false,
+      "facetable": false,
+      "dimensions": ${EMBEDDING_DIMENSIONS},
+      "vectorSearchProfile": "${KS_NAME}-vector-search-profile"
+    },
+    {
+      "name": "metadata_storage_path",
+      "type": "Edm.String",
+      "filterable": true,
+      "retrievable": false,
+      "searchable": false,
+      "sortable": false,
+      "facetable": false,
+      "stored": true
+    }
+  ],
+  "semantic": {
+    "defaultConfiguration": "${KS_NAME}-semantic-configuration",
+    "configurations": [
+      {
+        "name": "${KS_NAME}-semantic-configuration",
+        "prioritizedFields": {
+          "titleField": { "fieldName": "title" },
+          "prioritizedContentFields": [{ "fieldName": "chunk" }],
+          "prioritizedKeywordsFields": []
+        }
+      }
+    ]
+  },
+  "vectorSearch": {
+    "algorithms": [
+      {
+        "name": "${KS_NAME}-vector-search-algorithm",
+        "kind": "hnsw",
+        "hnswParameters": {
+          "metric": "cosine",
+          "m": 4,
+          "efConstruction": 400,
+          "efSearch": 500
+        }
+      }
+    ],
+    "profiles": [
+      {
+        "name": "${KS_NAME}-vector-search-profile",
+        "algorithm": "${KS_NAME}-vector-search-algorithm",
+        "vectorizer": "${KS_NAME}-vectorizer"
+      }
+    ],
+    "vectorizers": [
+      {
+        "name": "${KS_NAME}-vectorizer",
+        "kind": "azureOpenAI",
+        "azureOpenAIParameters": {
+          "resourceUri": "${AOAI_ENDPOINT}",
+          "deploymentId": "${EMBEDDING_DEPLOYMENT}",
+          "modelName": "${EMBEDDING_DEPLOYMENT}"
+        }
+      }
+    ]
+  }
+}

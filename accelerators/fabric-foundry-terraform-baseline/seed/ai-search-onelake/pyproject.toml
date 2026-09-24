@@ -1,0 +1,11 @@
+[project]
+name = "seed-ai-search"
+version = "0.1.0"
+description = "Hands-on Lab Data Platform - Azure AI Search seeding"
+requires-python = ">=3.13, <4.0.0"
+dependencies = [
+    "aiohttp>=3.10,<4",
+    "azure-identity==1.25.3",
+    "python-dotenv==1.2.3",
+    "azure-search-documents==12.0.0",
+]

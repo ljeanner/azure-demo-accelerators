@@ -12,6 +12,7 @@ Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup 
 
 | Accelerator | What it unlocks | Est. time |
 |---|---|---|
+| [`fabric-foundry-terraform-baseline`](accelerators/fabric-foundry-terraform-baseline/) | One `terraform apply` for a demo platform: Fabric capacity, AI Foundry account + project + models, AI Search wired to the project, Cosmos/Storage/App Insights, and the ~25 role assignments agents need | 20 min |
 | [`fabric-data-agent-synthetic-data`](accelerators/fabric-data-agent-synthetic-data/) | Generate a coherent synthetic dataset, write it as Delta tables in a Fabric Lakehouse, and wire it to a **Fabric Data Agent** (natural language → SQL) | 2-3 h |
 
 ---
@@ -29,6 +30,16 @@ Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup 
 1. **Scenario before data.** Write the 5 questions you will ask live first, then generate the data.
 2. **The signal must be visible in aggregate.** If the gap doesn't jump out on a weekly chart, the agent won't "see" it either.
 3. **Reproducibility.** Fixed seed, parameters at the top of the notebook: your colleagues must get exactly your numbers.
+
+---
+
+## Credits
+
+Some accelerators adapt work shared by colleagues. Credit and a link to the original
+are always stated at the top of the accelerator's README.
+
+- `fabric-foundry-terraform-baseline` — adapted from the FabCon 2026 workshop by
+  [Damien Aicheh](https://github.com/damienaicheh), shared with permission.
 
 ---
 

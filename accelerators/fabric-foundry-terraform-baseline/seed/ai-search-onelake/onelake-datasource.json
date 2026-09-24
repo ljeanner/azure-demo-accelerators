@@ -1,0 +1,11 @@
+{
+  "name": "${KS_NAME}-datasource",
+  "description": "OneLake (Microsoft Fabric lakehouse) data source for knowledge source '${KS_NAME}'",
+  "type": "onelake",
+  "credentials": {
+    "connectionString": "ResourceId=${FABRIC_WORKSPACE_ID}"
+  },
+  "container": {
+    "name": "${FABRIC_LAKEHOUSE_ID}"
+  }
+}
