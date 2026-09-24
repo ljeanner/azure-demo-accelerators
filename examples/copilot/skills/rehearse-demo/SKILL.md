@@ -1,16 +1,16 @@
 ---
 name: rehearse-demo
-description: Aide à répéter la démonstration et à vérifier qu'elle peut être rejouée.
+description: Helps rehearse the demonstration and check that it can be replayed.
 ---
 
-# Répéter la démo
+# Rehearse the demo
 
-1. Définir l'état initial, les étapes à montrer et les résultats attendus.
-2. Préparer une remise à zéro limitée aux données de démo.
-3. Si l'environnement le permet, jouer deux fois le parcours et comparer les résultats.
-4. Prévoir un secours clairement identifié : capture, vidéo ou mode simulé.
+1. Define the initial state, the steps to show, and the expected results.
+2. Prepare a reset procedure limited to demo data.
+3. If the environment allows it, run the flow twice and compare the results.
+4. Prepare a clearly labeled backup: screenshot, video, or simulated mode.
 
-Fournir une checklist de lancement, le résultat des répétitions et les points à corriger.
-Demander confirmation avant une suppression, un écrasement ou une action externe ;
-ne pas répéter des envois réels sans autorisation.
-Si tu ne peux pas exécuter la démo, fournir les étapes manuelles sans déclarer la répétition réussie.
+Provide a launch checklist, rehearsal results, and issues to fix.
+Ask for confirmation before deleting, overwriting, or performing an external action;
+do not repeat real sends without authorization.
+If you cannot run the demo, provide manual steps without claiming the rehearsal succeeded.

@@ -2,18 +2,18 @@
 applyTo: "**/*.bicep,**/*.bicepparam,**/*.tf,**/*.tfvars,**/azure.yaml,**/infra/**,**/deploy/**"
 ---
 
-# Notre environnement Azure
+# Our Azure environment
 
-Adapter `applyTo` aux fichiers de déploiement du projet.
+Adapt `applyTo` to the project's deployment files.
 
-- Environnement du groupe : << souscription et groupe de ressources, sans secret >>
-- Région : << région >>
-- Budget et durée de vie : << montant indicatif et date de nettoyage >>
-- Outil de déploiement : << outil existant ou étapes manuelles >>
+- Team environment: << subscription and resource group, no secrets >>
+- Region: << region >>
+- Budget and lifetime: << indicative amount and cleanup date >>
+- Deployment tool: << existing tool or manual steps >>
 
-Réutiliser l'environnement préparé. Vérifier la cible, les accès et les prérequis ;
-les accès Azure ne garantissent pas les accès Fabric ou M365.
-Ne pas enregistrer de secrets, de plans sensibles ou d'état Terraform dans le dépôt.
-Présenter les changements et les coûts estimés avant de demander confirmation pour déployer.
-Faire aussi confirmer les changements de droits, l'exposition publique et les suppressions.
-Ne pas supprimer de ressources partagées. Vérifier le fonctionnement après déploiement.
+Reuse the prepared environment. Check the target, access, and prerequisites;
+Azure access does not guarantee Fabric or M365 access.
+Do not store secrets, sensitive plans, or Terraform state in the repository.
+Present the changes and estimated costs before asking for deployment confirmation.
+Also obtain confirmation for permission changes, public exposure, and deletions.
+Do not delete shared resources. Verify functionality after deployment.

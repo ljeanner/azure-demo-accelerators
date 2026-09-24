@@ -1,17 +1,17 @@
 ---
 name: demo-preflight
-description: Vérifie les prérequis et les accès avant de construire ou déployer une démo Azure.
+description: Checks prerequisites and access before building or deploying an Azure demo.
 ---
 
-# Vérifier les prérequis
+# Check prerequisites
 
-À partir du HLD et de l'environnement indiqué par le groupe :
+Using the HLD and the environment specified by the team:
 
-1. Lister les services, outils, données et accès nécessaires.
-2. Vérifier ce qui est disponible avec des contrôles en lecture seule.
-3. Distinguer les accès Azure, Fabric et M365 si ces services sont utilisés.
-4. Signaler les blocages et proposer la prochaine action pour chacun.
+1. List the required services, tools, data, and access.
+2. Check what is available using read-only checks.
+3. Distinguish Azure, Fabric, and M365 access if these services are used.
+4. Report blockers and suggest the next action for each.
 
-Produire une checklist : **OK / bloqué / non vérifié**, avec une preuve courte.
-Ne pas demander de secrets, installer d'outils ou modifier l'environnement.
-Un accès non testé reste « non vérifié ».
+Produce a checklist marked **OK / blocked / not verified**, with brief evidence.
+Do not request secrets, install tools, or modify the environment.
+Untested access remains "not verified."

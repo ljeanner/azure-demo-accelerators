@@ -1,21 +1,21 @@
 ---
-applyTo: "demos/mon-use-case/**"
+applyTo: "demos/my-use-case/**"
 ---
 
-# Notre use case
+# Our use case
 
-Remplacer les champs et adapter `applyTo` au dossier de votre démo.
+Fill in the placeholders and adapt `applyTo` to your demo folder.
 
-- Entreprise fictive et problème : << contexte >>
-- Personas employé et client : << rôles >>
-- Parcours à montrer : << déclencheur -> action -> résultat >>
-- Maquette et HLD validé : << chemins >>
-- Technologies retenues : << services et rôle de chacun >>
-- Intégrations réelles / simulées : << liste >>
-- Priorité du hackathon : << fonctionnalité à terminer >>
-- Hors périmètre : << ce que l'on ne construit pas >>
-- Réussite de la démo : << résultat observable attendu >>
+- Fictional company and problem: << context >>
+- Employee and customer personas: << roles >>
+- Flow to demonstrate: << trigger -> action -> result >>
+- Mockup and approved HLD: << paths >>
+- Selected technologies: << services and their roles >>
+- Real / simulated integrations: << list >>
+- Hackathon priority: << feature to complete >>
+- Out of scope: << what we are not building >>
+- Demo success: << expected observable result >>
 
-Respecter ces choix et réutiliser l'existant. Demander avant de changer
-l'architecture. Utiliser des données fictives et montrer clairement les simulations.
-Un champ non rempli reste à clarifier, pas à inventer.
+Respect these choices and reuse what exists. Ask before changing
+the architecture. Use fictional data and clearly identify simulations.
+An empty field needs clarification, not invention.

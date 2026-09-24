@@ -1,36 +1,37 @@
-# Exemples Copilot pour le hackathon RCG
+# Copilot examples for the RCG hackathon
 
-Choisissez les fichiers utiles à votre démo, copiez-les dans votre projet
-et adaptez-les. Rien dans ce dossier n'est activé par défaut.
+Choose the files you need for your demo, copy them into your project,
+and adapt them. Nothing in this folder is enabled by default.
 
-## Agents : choisir un rôle
+## Agents: choose a role
 
-- [Relecteur d'architecture](agents/azure-architecture-reviewer.agent.md) : challenger votre HLD.
-- [Constructeur de démo](agents/demo-builder.agent.md) : implémenter votre scénario.
-- [Coach de démo](agents/demo-coach.agent.md) : préparer votre présentation orale.
+- [Architecture reviewer](agents/azure-architecture-reviewer.agent.md): review your HLD.
+- [Demo builder](agents/demo-builder.agent.md): implement your scenario.
+- [Demo coach](agents/demo-coach.agent.md): prepare your oral presentation.
 
-Copier les fichiers choisis dans `.github\agents\`, puis sélectionner l'agent dans Copilot.
+Copy the selected files into `.github\agents\`, then select the agent in Copilot.
 
-## Skills : réaliser une tâche
+## Skills: complete a task
 
-- [Prérequis](skills/demo-preflight/SKILL.md) : repérer les blocages avant de commencer.
-- [Données synthétiques](skills/synthetic-demo-data/SKILL.md) : créer les données de votre scénario.
-- [Intégration](skills/connect-demo-integration/SKILL.md) : connecter un service à votre application.
-- [Répétition](skills/rehearse-demo/SKILL.md) : vérifier que la démo peut être rejouée.
-- [PowerPoint](skills/demo-ppt/SKILL.md) : préparer cinq slides de restitution.
+- [Prerequisites](skills/demo-preflight/SKILL.md): identify blockers before starting.
+- [Integration](skills/connect-demo-integration/SKILL.md): connect a service to your application.
+- [Rehearsal](skills/rehearse-demo/SKILL.md): check that the demo can be replayed.
+- [PowerPoint](skills/demo-ppt/SKILL.md): prepare a five-slide demo recap.
 
-Copier chaque dossier choisi dans `.github\skills\`, puis demander par exemple :
-« Utilise demo-ppt pour préparer la restitution de notre démo. »
-La création du fichier PPTX nécessite un outil compatible ; sinon le skill fournit le contenu des slides.
+Copy each selected folder into `.github\skills\`, then ask, for example:
+"Use demo-ppt to prepare our demo presentation."
+Creating a PPTX requires a compatible tool; otherwise, the skill provides the slide content.
 
-## Instructions : donner le contexte
+For synthetic data in Fabric, see the separate [Fabric demo data agent skill](../../skills/fabric-demo-data-agent/SKILL.md).
 
-- [Use case](instructions/use-case.instructions.md) : votre scénario et vos choix techniques.
-- [Déploiement Azure](instructions/azure-deployment.instructions.md) : votre environnement et ses limites.
+## Instructions: provide context
 
-Copier dans `.github\instructions\`, remplir les champs `<< ... >>` et adapter
-`applyTo` aux chemins de votre projet (les glob patterns utilisent `/`).
-Les [règles communes](../../.github/copilot-instructions.md) sont déjà actives dans ce dépôt.
+- [Use case](instructions/use-case.instructions.md): your scenario and technology choices.
+- [Azure deployment](instructions/azure-deployment.instructions.md): your environment and constraints.
 
-**Pour démarrer :** renseigner le use case, relire le HLD, puis construire.
-Si votre client Copilot ne reconnaît pas un fichier, le joindre directement à la conversation.
+Copy into `.github\instructions\`, fill in the `<< ... >>` placeholders, and adapt
+`applyTo` to your project paths (glob patterns use `/`).
+The [shared rules](../../.github/copilot-instructions.md) are already active in this repository.
+
+**Getting started:** describe the use case, review the HLD, then build.
+If your Copilot client does not recognize a file, attach it directly to the conversation.

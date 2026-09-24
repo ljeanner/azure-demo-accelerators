@@ -1,26 +1,26 @@
 ---
 name: demo-ppt
-description: Prépare une restitution PowerPoint de la démo du hackathon. À utiliser pour créer les slides de présentation du scénario, de l'architecture et des résultats.
+description: Prepares a PowerPoint recap of the hackathon demo. Use it to create slides presenting the scenario, architecture, and results.
 ---
 
-# Préparer la restitution PowerPoint
+# Prepare the PowerPoint recap
 
-Lire le scénario, le HLD et les captures fournis. Demander les éléments essentiels
-manquants ; ne pas inventer de fonctionnalités ou de résultats.
+Read the provided scenario, HLD, and screenshots. Ask for missing essentials;
+do not invent features or results.
 
-Préparer cinq slides pour une présentation de cinq minutes :
+Prepare five slides for a five-minute presentation:
 
-1. **Le problème** : entreprise fictive, personas et besoin métier.
-2. **Le parcours** : trois étapes de la démo, avec une capture si disponible.
-3. **L'architecture** : schéma simple des services retenus et de leurs échanges.
-4. **Le résultat** : ce qui fonctionne, valeur illustrée et limites.
-5. **La suite** : ce qui reste à connecter ou améliorer après le hackathon.
+1. **The problem**: fictional company, personas, and business need.
+2. **The flow**: three demo steps, with a screenshot if available.
+3. **The architecture**: a simple diagram of the selected services and their interactions.
+4. **The result**: what works, illustrated value, and limitations.
+5. **Next steps**: what remains to connect or improve after the hackathon.
 
-Utiliser un titre clair, trois points maximum par slide et de courtes notes orateur.
-Identifier les éléments simulés ; qualifier les gains hypothétiques d'illustratifs.
-N'inclure aucun secret, donnée client réelle ou contenu interne dans les supports.
+Use a clear title, no more than three points per slide, and short speaker notes.
+Identify simulated elements; label hypothetical gains as illustrative.
+Do not include secrets, real customer data, or internal content in the materials.
 
-Si un outil de création PowerPoint est disponible, créer un fichier `.pptx`
-dans l'emplacement convenu, sans écraser un fichier existant, puis vérifier le
-rendu et la lisibilité des cinq slides. Sinon, fournir le contenu slide par
-slide prêt à copier dans PowerPoint et préciser qu'aucun PPTX n'a été généré.
+If a PowerPoint creation tool is available, create a `.pptx` file
+in the agreed location without overwriting an existing file, then check the
+rendering and readability of all five slides. Otherwise, provide slide-by-slide
+content ready to copy into PowerPoint and state that no PPTX was generated.
