@@ -45,6 +45,13 @@ automatically. Then just ask: *"build me demo data for a Fabric data agent"*.
 > **Running a hackathon today?** Go straight to **[HACKATHON.md](HACKATHON.md)** —
 > prerequisites checklist, two timeboxed tracks, definition of done, and the common failure modes.
 
+For the RCG workshop, the **[Copilot example kit (in French)](examples/copilot/README.md)**
+provides three agent profiles, five reusable skills (including a PowerPoint
+demo recap), and two instruction templates.
+Copy only what your group needs into your demo repository and adapt it to your HLD.
+The examples are inactive by default; only this repository's shared
+`.github/copilot-instructions.md` is active.
+
 1. Pick the accelerator that matches your demo.
 2. Open its `README.md` and paste the prompt into your assistant (Copilot, Claude, ChatGPT…).
 3. Fill in the `<< ... >>` placeholders with **your** customer scenario.

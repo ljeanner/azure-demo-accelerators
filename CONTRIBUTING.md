@@ -36,3 +36,18 @@ Then fill in `accelerators/my-accelerator/README.md`:
 ## Review
 
 One PR = one accelerator. A reviewer confirms they could run it from scratch.
+
+## Contributing Copilot examples
+
+The [RCG Copilot kit](examples/copilot/README.md) is a separate collection of
+opt-in examples, not an accelerator or an installed set of agents.
+Keep examples in `examples/copilot/`; do not activate them for everyone by moving
+them into `.github/` without an explicit decision.
+
+For each example, explain when to use it, its inputs, expected outputs and limits.
+Keep agent YAML frontmatter, skill folder names and `SKILL.md` names consistent
+with the linked GitHub documentation. Scope instruction templates with `applyTo`
+and explain which placeholders participants must replace.
+Update the kit index when adding an example. Review formats, relative links and
+copy destinations; do not claim runtime validation unless it was actually performed
+in a supported Copilot client.
