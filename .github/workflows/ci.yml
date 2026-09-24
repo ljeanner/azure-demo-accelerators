@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  terraform:
+    name: Terraform fmt + validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.14.4
+          terraform_wrapper: false
+
+      - name: terraform fmt -check
+        run: terraform fmt -check -recursive accelerators
+
+      - name: terraform init + validate
+        run: |
+          set -e
+          for dir in $(find accelerators -type f -name 'providers.tf' -printf '%h\n' | sort -u); do
+            echo "::group::$dir"
+            terraform -chdir="$dir" init -backend=false -input=false -no-color
+            terraform -chdir="$dir" validate -no-color
+            echo "::endgroup::"
+          done
+
+  notebooks:
+    name: Notebooks are valid and runnable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install --quiet nbformat pandas numpy
+
+      - name: Validate notebook format
+        run: |
+          python - <<'PY'
+          import pathlib, nbformat
+          nbs = sorted(pathlib.Path("accelerators").rglob("*.ipynb"))
+          assert nbs, "no notebook found"
+          for p in nbs:
+              nbformat.validate(nbformat.read(p, as_version=4))
+              print("ok", p)
+          PY
+
+      - name: Execute notebook code cells (pandas path, no Spark)
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, tempfile
+          root = pathlib.Path.cwd()
+          for p in sorted(root.joinpath("accelerators").rglob("*.ipynb")):
+              nb = json.loads(p.read_text(encoding="utf-8"))
+              src = "\n".join("".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code")
+              with tempfile.TemporaryDirectory() as d:
+                  os.chdir(d)
+                  try:
+                      exec(compile(src, str(p), "exec"), {"__name__": "__main__"})
+                  finally:
+                      os.chdir(root)
+              print("executed", p)
+          PY
+
+  links:
+    name: Markdown links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 2
+            --accept 200,206,403,429
+            '**/*.md'
+          fail: true
+
+  secrets:
+    name: No secrets committed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Grep for obvious secrets
+        run: |
+          set +e
+          pattern='(AccountKey=|-----BEGIN [A-Z ]*PRIVATE KEY-----|sk-[A-Za-z0-9]{32,}|[A-Za-z_]*[Aa][Pp][Ii]_?[Kk][Ee][Yy][A-Za-z_]*=[A-Za-z0-9]{20,})'
+          hits=$(grep -rInE "$pattern" --exclude-dir=.git --exclude-dir=.github . )
+          if [ -n "$hits" ]; then
+            echo "Potential secrets found:"
+            echo "$hits"
+            exit 1
+          fi
+          echo "None found."

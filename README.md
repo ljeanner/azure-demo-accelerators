@@ -1,5 +1,7 @@
 # Azure Demo Accelerators
 
+[![CI](https://github.com/ljeanner/azure-demo-accelerators/actions/workflows/ci.yml/badge.svg)](https://github.com/ljeanner/azure-demo-accelerators/actions/workflows/ci.yml)
+
 Reusable recipes for building **credible Azure / Fabric / AI demos, fast**.
 Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup checklist.
 
@@ -12,12 +14,15 @@ Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup 
 
 | Accelerator | What it unlocks | Est. time |
 |---|---|---|
-| [`fabric-foundry-terraform-baseline`](accelerators/fabric-foundry-terraform-baseline/) | One `terraform apply` for a demo platform: Fabric capacity, AI Foundry account + project + models, AI Search wired to the project, Cosmos/Storage/App Insights, and the ~25 role assignments agents need | 20 min |
-| [`fabric-data-agent-synthetic-data`](accelerators/fabric-data-agent-synthetic-data/) | Generate a coherent synthetic dataset, write it as Delta tables in a Fabric Lakehouse, and wire it to a **Fabric Data Agent** (natural language → SQL) | 2-3 h |
+| [`fabric-foundry-terraform-baseline`](accelerators/fabric-foundry-terraform-baseline/) | One `terraform apply` for a demo platform: Fabric capacity **+ workspace + lakehouse**, AI Foundry account + project + models, AI Search wired to the project, Cosmos/Storage/App Insights, the ~25 role assignments agents need, and pause/resume scripts to stop the billing | 20 min |
+| [`fabric-data-agent-synthetic-data`](accelerators/fabric-data-agent-synthetic-data/) | A copy-paste prompt **and a runnable reference notebook** to generate a coherent synthetic dataset with a planted storyline, write it as Delta tables in a Fabric Lakehouse, and wire it to a **Fabric Data Agent** (natural language → SQL) | 2-3 h |
 
 ---
 
 ## Quick start (hackathon)
+
+> **Running a hackathon today?** Go straight to **[HACKATHON.md](HACKATHON.md)** —
+> prerequisites checklist, two timeboxed tracks, definition of done, and the common failure modes.
 
 1. Pick the accelerator that matches your demo.
 2. Open its `README.md` and paste the prompt into your assistant (Copilot, Claude, ChatGPT…).
