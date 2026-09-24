@@ -1,53 +1,53 @@
-# << Nom de l'accélérateur >>
+# << Accelerator name >>
 
-**Objectif :** << en une phrase, ce que cette démo prouve au client >>
+**Goal:** << one sentence: what this demo proves to the customer >>
 
-**Durée de mise en place :** << ex. 2 h >> · **Public visé :** << ex. décideurs métier, data engineers >>
-
----
-
-## Prérequis
-
-- << licence / capacité, ex. capacité Fabric F2+ >>
-- << rôles et permissions >>
-- << outils locaux >>
+**Setup time:** << e.g. 2 h >> · **Audience:** << e.g. business decision makers, data engineers >>
 
 ---
 
-## Le prompt
+## Prerequisites
+
+- << license / capacity, e.g. Fabric F2+ capacity >>
+- << roles and permissions >>
+- << local tooling >>
+
+---
+
+## The prompt
 
 ```
-<< Prompt copiable, avec des placeholders << ... >> pour le contexte client.
-   Décris le rôle, le contexte, le scénario, les exigences, la structure attendue
-   du livrable, et les livrables annexes. >>
+<< Copy-paste prompt, with << ... >> placeholders for the customer context.
+   Describe the role, the context, the scenario, the requirements, the expected
+   structure of the deliverable, and any extra deliverables. >>
 ```
 
 ---
 
-## Mise en place
+## Setup
 
-1. << étape >>
-2. << étape >>
-3. << étape >>
+1. << step >>
+2. << step >>
+3. << step >>
 
 ---
 
-## Script de démo
+## Demo script
 
-| # | Question / action en live | Résultat attendu |
+| # | Live question / action | Expected result |
 |---|---|---|
 | 1 | << ... >> | << ... >> |
 | 2 | << ... >> | << ... >> |
 
 ---
 
-## Règles d'or
+## Golden rules
 
-- << piège n°1 et comment l'éviter >>
-- << piège n°2 >>
+- << trap #1 and how to avoid it >>
+- << trap #2 >>
 
 ---
 
 ## Sources
 
-- [<< Titre de la page Learn >>](<< URL >>)
+- [<< Learn page title >>](<< URL >>)

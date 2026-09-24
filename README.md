@@ -1,43 +1,43 @@
 # Azure Demo Accelerators
 
-Recettes réutilisables pour construire **rapidement** des démos Azure / Fabric / AI crédibles devant un client.
-Chaque accélérateur = un dossier, un `README.md`, un prompt prêt à copier-coller, et un checklist de mise en place.
+Reusable recipes for building **credible Azure / Fabric / AI demos, fast**.
+Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup checklist.
 
-> Repo interne Microsoft. **Aucune donnée client, aucune PII, aucun secret.** Tout est synthétique.
+> Internal Microsoft repo. **No customer data, no PII, no secrets.** Everything is synthetic.
 
 ---
 
-## Accélérateurs disponibles
+## Available accelerators
 
-| Accélérateur | Ce que ça débloque | Temps estimé |
+| Accelerator | What it unlocks | Est. time |
 |---|---|---|
-| [`fabric-data-agent-synthetic-data`](accelerators/fabric-data-agent-synthetic-data/) | Générer un jeu de données synthétique cohérent, l'écrire en tables Delta dans un Lakehouse Fabric, et le brancher sur un **Fabric Data Agent** (questions en langage naturel → SQL) | 2-3 h |
+| [`fabric-data-agent-synthetic-data`](accelerators/fabric-data-agent-synthetic-data/) | Generate a coherent synthetic dataset, write it as Delta tables in a Fabric Lakehouse, and wire it to a **Fabric Data Agent** (natural language → SQL) | 2-3 h |
 
 ---
 
-## Démarrage rapide (hackathon)
+## Quick start (hackathon)
 
-1. Choisis l'accélérateur qui correspond à ta démo.
-2. Ouvre son `README.md` et copie le prompt dans ton assistant (Copilot, Claude, ChatGPT…).
-3. Remplis les blocs `<< ... >>` avec **ton** scénario client.
-4. Suis le checklist de mise en place à la fin du README.
-5. Répète la démo 2 fois avant de la montrer. Une démo non répétée est une démo ratée.
+1. Pick the accelerator that matches your demo.
+2. Open its `README.md` and paste the prompt into your assistant (Copilot, Claude, ChatGPT…).
+3. Fill in the `<< ... >>` placeholders with **your** customer scenario.
+4. Follow the setup checklist at the end of the README.
+5. Rehearse the demo twice before showing it. An unrehearsed demo is a failed demo.
 
-### Les 3 règles qui font la différence
+### The 3 rules that make the difference
 
-1. **Le scénario avant la donnée.** Écris d'abord les 5 questions que tu vas poser en live, génère la donnée ensuite.
-2. **Le signal doit être visible en agrégé.** Si l'écart ne saute pas aux yeux sur un graphe hebdo, l'agent ne le « verra » pas non plus.
-3. **Reproductibilité.** Seed fixé, paramètres en haut du notebook : tes collègues doivent obtenir exactement tes chiffres.
+1. **Scenario before data.** Write the 5 questions you will ask live first, then generate the data.
+2. **The signal must be visible in aggregate.** If the gap doesn't jump out on a weekly chart, the agent won't "see" it either.
+3. **Reproducibility.** Fixed seed, parameters at the top of the notebook: your colleagues must get exactly your numbers.
 
 ---
 
-## Contribuer
+## Contributing
 
-Tu as monté une démo qui a marché ? Publie-la ici.
+Built a demo that landed? Publish it here.
 
-1. Copie [`_template/`](_template/) vers `accelerators/<nom-court-kebab-case>/`.
-2. Remplis le README (contexte, prompt, checklist, sources Microsoft Learn).
-3. Ajoute une ligne au tableau ci-dessus.
-4. Ouvre une PR.
+1. Copy [`_template/`](_template/) to `accelerators/<short-kebab-case-name>/`.
+2. Fill in the README (context, prompt, checklist, Microsoft Learn sources).
+3. Add a row to the table above.
+4. Open a PR.
 
-Voir [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
