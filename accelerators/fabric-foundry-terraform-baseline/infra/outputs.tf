@@ -28,6 +28,16 @@ output "fabric_capacity_name" {
   value       = azurerm_fabric_capacity.this.name
 }
 
+output "fabric_workspace_id" {
+  description = "Fabric workspace GUID (FABRIC_WORKSPACE_ID for the seed scripts)"
+  value       = try(fabric_workspace.this[0].id, null)
+}
+
+output "fabric_lakehouse_id" {
+  description = "Fabric lakehouse GUID (FABRIC_LAKEHOUSE_ID for the seed scripts)"
+  value       = try(fabric_lakehouse.this[0].id, null)
+}
+
 output "search_service_name" {
   description = "Azure AI Search service name"
   value       = azapi_resource.ai_search.name

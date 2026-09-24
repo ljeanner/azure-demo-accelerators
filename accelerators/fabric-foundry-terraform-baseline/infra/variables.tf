@@ -56,6 +56,30 @@ variable "fabric_capacity_sku" {
   default     = "F2"
 }
 
+variable "create_fabric_workspace" {
+  type        = bool
+  description = "Create the Fabric workspace and lakehouse with the microsoft/fabric provider. Set to false if your tenant blocks Fabric API access and you create them by hand."
+  default     = true
+}
+
+variable "fabric_workspace_name" {
+  type        = string
+  description = "Display name of the Fabric workspace. Defaults to ws-<naming suffix>."
+  default     = null
+}
+
+variable "fabric_lakehouse_name" {
+  type        = string
+  description = "Display name of the lakehouse. Must be alphanumeric/underscore only."
+  default     = "lh_demo"
+}
+
+variable "grant_ai_search_on_workspace" {
+  type        = bool
+  description = "Grant the AI Search managed identity Contributor on the Fabric workspace, so it can index OneLake."
+  default     = true
+}
+
 variable "chat_model" {
   type = object({
     name     = string

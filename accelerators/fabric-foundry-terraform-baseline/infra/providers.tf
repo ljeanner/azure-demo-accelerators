@@ -19,6 +19,11 @@ terraform {
       source  = "hashicorp/azuread"
       version = "~> 3.0"
     }
+
+    fabric = {
+      source  = "microsoft/fabric"
+      version = "~> 1.14"
+    }
   }
 
   backend "local" {}
@@ -40,4 +45,10 @@ provider "azapi" {
 
 provider "azuread" {
   # Configuration options
+}
+
+provider "fabric" {
+  # Authenticates with the Azure CLI by default (az login).
+  # Service principal / OIDC options are documented at
+  # https://registry.terraform.io/providers/microsoft/fabric/latest/docs
 }
