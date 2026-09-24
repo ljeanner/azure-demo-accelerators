@@ -45,7 +45,7 @@ Pick one. Do not try to do two.
 | 0:00 – 0:20 | `terraform apply` on [`fabric-foundry-terraform-baseline`](accelerators/fabric-foundry-terraform-baseline/) — start it early, it is the long pole |
 | 0:20 – 2:00 | Track A steps, in the workspace Terraform just created |
 | 2:00 – 3:00 | Index the lakehouse into AI Search (`seed/ai-search-onelake/`) |
-| 3:00 – 4:00 | Wire a Foundry agent on top, rehearse |
+| 3:00 – 4:00 | Put a Foundry agent in front with [`foundry-agent-over-fabric-data-agent`](accelerators/foundry-agent-over-fabric-data-agent/), rehearse |
 
 ---
 
@@ -81,6 +81,8 @@ A demo is ready when all of these are true:
 | `terraform apply` fails on a model deployment | Regional TPM quota | Lower `capacity` in `var.chat_model`, or change region |
 | `terraform apply` fails on a role assignment | Missing User Access Administrator | Ask for the role, or deploy into a resource group you own |
 | Agent contradicts itself between two runs | Ambiguous metric definition | Define it in the agent instructions: "revenue means `net_amount`" |
+| Foundry agent never calls the Fabric tool | No tool routing in the instructions | Say it explicitly, or force it with `tool_choice="required"` |
+| Foundry agent works for you, fails for a colleague | Fabric tool uses identity passthrough | Grant them `READ` on the data agent **and** on the lakehouse |
 | Everything worked yesterday, nothing works today | Capacity paused, or session expired | `scripts/capacity.sh resume`, `az login` |
 
 ---

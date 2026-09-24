@@ -16,6 +16,7 @@ Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup 
 |---|---|---|
 | [`fabric-foundry-terraform-baseline`](accelerators/fabric-foundry-terraform-baseline/) | One `terraform apply` for a demo platform: Fabric capacity **+ workspace + lakehouse**, AI Foundry account + project + models, AI Search wired to the project, Cosmos/Storage/App Insights, the ~25 role assignments agents need, and pause/resume scripts to stop the billing | 20 min |
 | [`fabric-data-agent-synthetic-data`](accelerators/fabric-data-agent-synthetic-data/) | A copy-paste prompt **and a runnable reference notebook** to generate a coherent synthetic dataset with a planted storyline, write it as Delta tables in a Fabric Lakehouse, and wire it to a **Fabric Data Agent** (natural language → SQL) | 2-3 h |
+| [`foundry-agent-over-fabric-data-agent`](accelerators/foundry-agent-over-fabric-data-agent/) | Put a **Foundry agent** in front of your Fabric data agent: project connection script, two working Python clients, demo script and troubleshooting table | 45 min |
 
 ---
 

@@ -1,0 +1,9 @@
+azure-identity>=1.19
+python-dotenv>=1.0
+
+# prompt_agent.py - server-side prompt agent
+azure-ai-projects>=2.0.0b1
+
+# hosted_agent.py - ephemeral in-process agent
+agent-framework-foundry
+aiohttp

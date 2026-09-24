@@ -35,7 +35,7 @@ jobs:
           done
 
   notebooks:
-    name: Notebooks are valid and runnable
+    name: Notebooks and scripts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,6 +45,15 @@ jobs:
           python-version: '3.11'
 
       - run: pip install --quiet nbformat pandas numpy
+
+      - name: Compile Python scripts
+        run: python -m compileall -q accelerators
+
+      - name: Check shell scripts
+        run: |
+          set -e
+          find accelerators -name '*.sh' -print0 | xargs -0 -r -n1 bash -n
+          echo "shell syntax ok"
 
       - name: Validate notebook format
         run: |
