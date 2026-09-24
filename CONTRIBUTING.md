@@ -29,7 +29,7 @@ Then fill in `accelerators/my-accelerator/README.md`:
 
 - ❌ No customer data, no real customer names, no PII.
 - ❌ No secrets, keys, connection strings, or tokens — not even expired ones.
-- ❌ No NDA or unannounced content.
+- ❌ No confidential, NDA, or unannounced content — this repo is public.
 - ✅ Company, competitor, and people names must be **made up**.
 - ✅ Fixed seeds so synthetic data is reproducible.
 

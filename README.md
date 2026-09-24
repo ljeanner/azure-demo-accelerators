@@ -3,7 +3,8 @@
 Reusable recipes for building **credible Azure / Fabric / AI demos, fast**.
 Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup checklist.
 
-> Internal Microsoft repo. **No customer data, no PII, no secrets.** Everything is synthetic.
+> **No customer data, no PII, no secrets.** Everything here is synthetic and built from public
+> Microsoft Learn documentation.
 
 ---
 
