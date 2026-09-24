@@ -1,41 +1,17 @@
 ---
 name: demo-preflight
-description: Vérifie les prérequis d'une démonstration Azure avant le build ou le déploiement. À utiliser pour contrôler les accès, ressources, licences, quotas et connexions d'un HLD sans modifier l'environnement.
+description: Vérifie les prérequis et les accès avant de construire ou déployer une démo Azure.
 ---
 
 # Vérifier les prérequis
 
-## Entrées
+À partir du HLD et de l'environnement indiqué par le groupe :
 
-Scénario, HLD, services retenus, environnement du groupe et temps disponible.
-Demander uniquement les informations manquantes qui empêchent la vérification.
-Ne jamais demander de copier un secret dans la conversation.
+1. Lister les services, outils, données et accès nécessaires.
+2. Vérifier ce qui est disponible avec des contrôles en lecture seule.
+3. Distinguer les accès Azure, Fabric et M365 si ces services sont utilisés.
+4. Signaler les blocages et proposer la prochaine action pour chacun.
 
-## Procédure
-
-1. Lire le contexte du projet et lister les dépendances réellement utiles au
-   parcours. Écarter les services simplement cités comme possibilités.
-2. Vérifier les outils et versions requis par les commandes du projet.
-3. Identifier séparément les périmètres Azure, Fabric et M365 concernés :
-   souscription, groupe de ressources, workspace, tenant et identités.
-   Une connexion Azure ne prouve pas un accès à Fabric ou M365.
-4. Avec les outils disponibles, effectuer uniquement des contrôles de lecture :
-   contexte connecté, existence des ressources, droits observables, connectivité
-   et quota/capacité si consultables. Ne pas afficher de jetons ni de secrets.
-5. Vérifier les prérequis produit dans Microsoft Learn. Distinguer prérequis
-   documenté et disponibilité effectivement constatée dans cet environnement.
-6. Pour chaque contrôle impossible, indiquer « non vérifié », la raison et une
-   procédure manuelle précise. Ne pas interpréter l'absence d'erreur comme une preuve.
-7. Proposer, sans l'appliquer, une réduction du périmètre ou une simulation
-   explicite si le groupe ne peut pas résoudre un blocage pendant la session.
-
-## Résultat attendu
-
-| Prérequis | Statut | Preuve datée ou source | Action suivante |
-|---|---|---|---|
-| Élément contrôlé | OK / bloqué / non vérifié / non applicable | Observation sans secret | Action et responsable à désigner |
-
-Conclure « prêt », « prêt sous conditions » ou « bloqué » pour le parcours
-concerné. Un prérequis critique non vérifié empêche de conclure « prêt ».
-Ne pas provisionner, installer, changer les droits, se connecter avec de
-nouveaux identifiants ou activer un service dans cette procédure.
+Produire une checklist : **OK / bloqué / non vérifié**, avec une preuve courte.
+Ne pas demander de secrets, installer d'outils ou modifier l'environnement.
+Un accès non testé reste « non vérifié ».

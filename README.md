@@ -26,7 +26,8 @@ Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup 
 > prerequisites checklist, two timeboxed tracks, definition of done, and the common failure modes.
 
 For the RCG workshop, the **[Copilot example kit (in French)](examples/copilot/README.md)**
-provides three agent profiles, four reusable skills, and two instruction templates.
+provides three agent profiles, five reusable skills (including a PowerPoint
+demo recap), and two instruction templates.
 Copy only what your group needs into your demo repository and adapt it to your HLD.
 The examples are inactive by default; only this repository's shared
 `.github/copilot-instructions.md` is active.
