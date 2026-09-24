@@ -20,6 +20,26 @@ Each accelerator is one folder: a `README.md`, a copy-paste prompt, and a setup 
 
 ---
 
+## Copilot skill
+
+The method above is also packaged as a **GitHub Copilot skill**, so the agent applies it without
+being asked:
+
+```bash
+# user scope (all your projects)
+cp -r skills/fabric-demo-data-agent ~/.copilot/skills/
+```
+
+```powershell
+# Windows
+Copy-Item skills\fabric-demo-data-agent "$env:USERPROFILE\.copilot\skills\" -Recurse
+```
+
+Cloning this repo is enough to get it at **project scope** — skills in `skills/` are picked up
+automatically. Then just ask: *"build me demo data for a Fabric data agent"*.
+
+---
+
 ## Quick start (hackathon)
 
 > **Running a hackathon today?** Go straight to **[HACKATHON.md](HACKATHON.md)** —
