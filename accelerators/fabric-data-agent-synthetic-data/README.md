@@ -9,6 +9,36 @@ business questions in natural language, with a scenario that carries the sales n
 > Paste the prompt below into Copilot / Claude / a Fabric notebook, fill in the `<< ... >>` blocks,
 > and let the assistant produce the notebook.
 
+> **In a hurry?** Skip the prompt and start from the working notebook:
+> [`notebook/synthetic_data_to_lakehouse.ipynb`](notebook/synthetic_data_to_lakehouse.ipynb).
+> Edit the parameters cell, run all, done — see [section 0](#0-shortcut-the-reference-notebook).
+
+---
+
+## 0. Shortcut: the reference notebook
+
+[`notebook/synthetic_data_to_lakehouse.ipynb`](notebook/synthetic_data_to_lakehouse.ipynb) is a
+complete, parameterised, **runnable** version of what the prompt is supposed to produce. Use it as
+a starting point, or as the reference the assistant should imitate.
+
+1. Attach it to a lakehouse in your Fabric workspace.
+2. Edit the **Parameters** cell (volumes, dates, seed, table prefix).
+3. Run all — about a minute for 200k transactions.
+
+It produces four tables — `stores`, `products`, `customers`, `transactions` — and ships with:
+
+- **built-in structure**: yearly seasonality, weekday profile, growth trend, per-store multiplier,
+  Pareto product popularity. Never a flat line.
+- **a planted storyline**: one store collapsing from a given date, one category doubling, a batch of
+  negative-margin transactions. Three demo questions with a real answer.
+- **validation before writing**: null checks, referential integrity, unique keys, date window.
+- **a Spark/pandas switch**: writes Delta in Fabric, CSV on your laptop, so you can test it
+  before you touch a capacity.
+- **a verification section** printing the exact aggregates you will ask the agent for.
+
+To move to your own domain, replace section 2 (reference data) and section 4 (storyline). The rest
+is domain-agnostic.
+
 ---
 
 ## 1. The prompt (copy-paste)
